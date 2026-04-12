@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { DataTable } from "@/components/data/data-table";
 import { Select } from "@/components/ui/select";
-import { listRoles, listUsers, updateUserRole } from "@/lib/cms-api";
+import { listRoles } from "@/lib/api/roles";
+import { listUsers, updateUserRole } from "@/lib/api/users";
 
 export function UsersClient() {
   const [users, setUsers] = useState<Array<{ id: string; email: string; roleId: string }>>([]);

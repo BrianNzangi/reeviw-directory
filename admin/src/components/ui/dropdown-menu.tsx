@@ -2,6 +2,7 @@
 
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 export const DropdownMenu = DropdownMenuPrimitive.Root;
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -16,11 +17,19 @@ export function DropdownMenuContent({ children }: { children: ReactNode }) {
   );
 }
 
-export function DropdownMenuItem({ children, onSelect }: { children: ReactNode; onSelect?: () => void }) {
+export function DropdownMenuItem({
+  children,
+  onSelect,
+  className,
+}: {
+  children: ReactNode;
+  onSelect?: (event: Event) => void;
+  className?: string;
+}) {
   return (
     <DropdownMenuPrimitive.Item
       onSelect={onSelect}
-      className="cursor-pointer rounded px-2 py-1.5 text-sm outline-none hover:bg-muted"
+      className={cn("cursor-pointer rounded px-2 py-1.5 text-sm outline-none hover:bg-muted", className)}
     >
       {children}
     </DropdownMenuPrimitive.Item>

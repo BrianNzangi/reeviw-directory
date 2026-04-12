@@ -6,6 +6,7 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+  			'secondary-900': '#0f172a',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -50,6 +51,7 @@ const config: Config = {
   		},
   		fontFamily: {
   			sans: [
+  				'var(--font-ibm-plex-sans)',
   				'ui-sans-serif',
   				'system-ui',
   				'sans-serif'

@@ -1,7 +1,8 @@
 import { requirePermission } from "@/lib/guards";
-import { PostEditor } from "../post-editor";
+import { PostEditor } from "@/components/posts";
 
-export default async function EditPostPage({ params }: { params: { id: string } }) {
+export default async function EditPostPage({ params }: { params: Promise<{ id: string }> }) {
   await requirePermission("manage_posts");
-  return <PostEditor mode="edit" postId={params.id} />;
+  const { id } = await params;
+  return <PostEditor mode="edit" postId={id} />;
 }

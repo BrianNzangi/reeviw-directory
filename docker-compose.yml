@@ -2,29 +2,47 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: reeviw_directory
+      POSTGRES_DB: bargainly-deals
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: "##@Scottish!"
     ports:
       - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
 
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
   backend:
     build:
-      context: ./backend
+      context: ./backend 
       dockerfile: Dockerfile
     depends_on:
       - postgres
+      - redis
     environment:
       NODE_ENV: development
       PORT: 3002
-      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/reeviw_directory
-      BETTER_AUTH_SECRET: change-me-super-secret
-      BETTER_AUTH_URL: http://localhost:3002
-      SUPERADMIN_EMAILS: admin@example.com
+      DATABASE_URL: postgresql://postgres:%23%23%40Scottish%21@postgres:5432/bargainly-deals
+      REDIS_URL: redis://redis:6379
+      CACHE_ENABLED: "true"
+      CACHE_TTL_PUBLIC_LIST: "120"
+      CACHE_TTL_PUBLIC_DETAIL: "600"
+      CACHE_TTL_PUBLIC_LOOKUP: "60"
+      BETTER_AUTH_SECRET: 9eebc57cc02c62f6a56a69f5d10c9686c9abd8d33cf341092b5ca2e88bd47871
+      BETTER_AUTH_URL: http://backend:3002
+      SUPERADMIN_EMAILS: admin@bargainlydeals.com
+      AMAZON_ASSOCIATE_TAG: bargdeal26-20
     ports:
       - "3002:3002"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:3002/health >/dev/null 2>&1 || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
     volumes:
       - ./backend:/app
       - /app/node_modules
@@ -34,14 +52,12 @@ services:
       context: ./admin
       dockerfile: Dockerfile
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     environment:
       NEXT_PUBLIC_API_BASE_URL: http://backend:3002
     ports:
-      - "3001:3001"
-    volumes:
-      - ./admin:/app
-      - /app/node_modules
+      - "3003:3001"
 
 volumes:
   pg_data:

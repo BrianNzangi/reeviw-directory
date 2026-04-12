@@ -3,7 +3,7 @@ import { conversions } from "../db/schema.js";
 
 type ImpactConversion = {
   id: string;
-  toolId: string;
+  productId: string;
   affiliateProgramId: string;
   revenue: number;
   commission: number;
@@ -22,9 +22,9 @@ export async function syncImpact() {
 
   for (const row of impactResults) {
     await db
-      .insert(conversions)
-      .values({
-        toolId: row.toolId,
+        .insert(conversions)
+        .values({
+        productId: row.productId,
         affiliateProgramId: row.affiliateProgramId,
         network: "impact",
         networkConversionId: row.id,

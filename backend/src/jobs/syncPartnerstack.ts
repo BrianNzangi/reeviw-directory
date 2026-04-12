@@ -3,7 +3,7 @@ import { conversions } from "../db/schema.js";
 
 type PartnerstackConversion = {
   id: string;
-  toolId: string;
+  productId: string;
   affiliateProgramId: string;
   revenue: number;
   commission: number;
@@ -22,9 +22,9 @@ export async function syncPartnerstack() {
 
   for (const row of partnerstackResults) {
     await db
-      .insert(conversions)
-      .values({
-        toolId: row.toolId,
+        .insert(conversions)
+        .values({
+        productId: row.productId,
         affiliateProgramId: row.affiliateProgramId,
         network: "partnerstack",
         networkConversionId: row.id,

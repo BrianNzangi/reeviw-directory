@@ -1,6 +1,6 @@
-# Reeviw Admin
+# Bargainly Deals Admin
 
-Next.js App Router admin panel for reeviw-directory CMS.
+Next.js App Router admin panel for the Bargainly Deals CMS.
 
 ## Stack
 - Next.js + TypeScript
@@ -24,7 +24,7 @@ docker compose up --build
 
 Services:
 - Backend: `http://localhost:3002`
-- Admin: `http://localhost:3001/admin/login`
+- Admin: `http://localhost:3003/admin/login`
 
 ## Local Admin Dev
 
@@ -33,6 +33,9 @@ cd admin
 npm install
 npm run dev
 ```
+
+Local admin dev runs on `http://localhost:3003/admin/login`.
+If `3003` is already in use, `npm run dev` automatically starts on the next open port.
 
 ## Auth flow
 - Login page: `/admin/login`
@@ -43,7 +46,7 @@ npm run dev
 ## Implemented sections
 - Dashboard
 - Posts (list/new/edit/publish)
-- Tools (list/new/edit/publish)
+- Products (list/new/edit/publish)
 - Categories
 - Comparisons
 - Reviews moderation

@@ -8,7 +8,6 @@
 
 body {
   @apply bg-background text-foreground antialiased;
-  font-family: "IBM Plex Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "wdth" 100;
@@ -20,20 +19,121 @@ select {
   @apply outline-none;
 }
 
+.wysiwyg-editor h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.wysiwyg-editor {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.wysiwyg-editor h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.wysiwyg-editor h3 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.wysiwyg-editor p {
+  margin: 0.5rem 0;
+}
+
+.wysiwyg-editor ul,
+.wysiwyg-editor ol {
+  margin: 0.5rem 0 0.5rem 1.25rem;
+  padding: 0;
+}
+
+.wysiwyg-editor ul {
+  list-style: disc;
+}
+
+.wysiwyg-editor ol {
+  list-style: decimal;
+}
+
+.wysiwyg-editor blockquote {
+  margin: 0.75rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid hsl(var(--border));
+  color: hsl(var(--muted-foreground));
+}
+
+.wysiwyg-editor pre {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: hsl(var(--muted));
+  font-family: ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.wysiwyg-editor a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+}
+
+.wysiwyg-editor img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
 
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --brand-primary-1: 12.2 100% 50%; /* #ff3400 */
+    --brand-primary-2: 9.7 100% 60%; /* #ff5433 */
+    --brand-primary-3: 10.2 100% 65.3%; /* #ff6c4e */
+    --brand-primary-4: 10.6 100% 70%; /* #ff8166 */
+    --brand-primary-5: 11.1 100% 74.5%; /* #ff957d */
+    --brand-primary-6: 11.7 100% 78.8%; /* #ffa893 */
+    --brand-primary-7: 12.4 100% 82.9%; /* #ffbaa8 */
+    --brand-primary-8: 12 100% 87.3%; /* #ffcbbe */
+    --brand-primary-9: 12.6 100% 91.6%; /* #ffddd4 */
+    --brand-primary-10: 13.6 100% 95.7%; /* #ffeee9 */
+    --brand-secondary-1: 213.8 29.6% 21.2%;
+    --brand-secondary-2: 214 20.8% 28.2%;
+    --brand-secondary-3: 214.3 15.6% 35.3%;
+    --brand-secondary-4: 214.6 11.9% 42.7%;
+    --brand-secondary-5: 213.9 9.1% 50.4%;
+    --brand-secondary-6: 214.7 8.9% 58.2%;
+    --brand-secondary-7: 213.8 9.3% 66.3%;
+    --brand-secondary-8: 215 9.2% 74.5%;
+    --brand-secondary-9: 210 9.1% 82.7%;
+    --brand-secondary-10: 210 9.1% 91.4%;
+
+    --background: 210 20% 98%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --primary: var(--brand-primary-1);
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary: var(--brand-secondary-1);
+    --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
     --accent: 0 0% 96.1%;
@@ -42,7 +142,7 @@ select {
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --ring: var(--brand-primary-1);
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -51,6 +151,18 @@ select {
     --radius: 0.5rem;
   }
   .dark {
+    /* Dark scale (100 -> lightest, 10 -> darkest) */
+    --brand-dark-1: 0 0% 87.1%; /* #dedede (100) */
+    --brand-dark-2: 0 0% 74.5%; /* #bebebe (90) */
+    --brand-dark-3: 0 0% 62%; /* #9e9e9e (80) */
+    --brand-dark-4: 0 0% 50.2%; /* #808080 (70) */
+    --brand-dark-5: 0 0% 38.8%; /* #636363 (60) */
+    --brand-dark-6: 0 0% 28.2%; /* #484848 (50) */
+    --brand-dark-7: 0 0% 18%; /* #2e2e2e (40) */
+    --brand-dark-8: 0 0% 8.6%; /* #161616 (30) */
+    --brand-dark-9: 0 0% 1.2%; /* #030303 (20) */
+    --brand-dark-10: 0 0% 0%; /* #000000 (10) */
+    
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;

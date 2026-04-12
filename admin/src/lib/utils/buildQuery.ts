@@ -1,0 +1,13 @@
+export type QueryValue = string | number | boolean | null | undefined;
+
+export function buildQuery(params?: Record<string, QueryValue>) {
+  const query = new URLSearchParams();
+  if (!params) return query;
+
+  for (const [key, value] of Object.entries(params)) {
+    if (value === undefined || value === null || value === "") continue;
+    query.set(key, String(value));
+  }
+
+  return query;
+}

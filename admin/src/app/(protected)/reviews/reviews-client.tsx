@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { DataTable } from "@/components/data/data-table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { approveReview, listPendingReviews, rejectReview, type Review } from "@/lib/cms-api";
+import { approveReview, listPendingReviews, rejectReview, type Review } from "@/lib/api/reviews";
 
 export function ReviewsClient() {
   const [rows, setRows] = useState<Review[]>([]);

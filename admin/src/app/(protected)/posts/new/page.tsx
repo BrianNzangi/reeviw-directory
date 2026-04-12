@@ -1,5 +1,5 @@
 import { requirePermission } from "@/lib/guards";
-import { PostEditor } from "../post-editor";
+import { PostEditor } from "@/components/posts";
 
 export default async function NewPostPage() {
   await requirePermission("manage_posts");

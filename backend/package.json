@@ -1,5 +1,5 @@
 {
-  "name": "reeviw-directory-backend",
+  "name": "bargainly-deals-backend",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,20 +12,33 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx src/db/migrate.ts",
     "db:seed": "tsx src/db/seed.ts",
+    "db:studio": "node scripts/drizzle-studio.mjs",
     "jobs:daily": "tsx src/jobs/index.ts"
   },
   "dependencies": {
+    "@fastify/cookie": "^11.0.2",
     "@fastify/cors": "^10.0.1",
+    "@fastify/csrf-protection": "^7.1.0",
+    "@fastify/multipart": "^9.0.0",
     "@fastify/rate-limit": "^10.3.0",
-    "better-auth": "^1.1.19",
+    "@fastify/swagger": "^9.3.0",
+    "@fastify/swagger-ui": "^5.2.3",
+    "better-auth": "^1.4.18",
+    "csv-parse": "^5.5.6",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.45.1",
     "fastify": "^5.2.1",
-    "pg": "^8.14.1"
+    "fastify-bcrypt": "^1.0.0",
+    "fastify-plugin": "^4.5.1",
+    "pg": "^8.14.1",
+    "redis": "^4.7.0",
+    "yauzl": "^2.10.0"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.13.10",
     "@types/pg": "^8.16.0",
+    "@types/yauzl": "^2.10.2",
     "drizzle-kit": "^0.31.9",
     "eslint": "^10.0.0",
     "eslint-config-prettier": "^6.15.0",

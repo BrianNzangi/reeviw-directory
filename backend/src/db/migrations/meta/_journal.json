@@ -1,13 +1,181 @@
 {
-  "version": "7",
-  "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1739990000000,
-      "tag": "0000_init",
-      "breakpoints": true
-    }
-  ]
+    "version":  "7",
+    "dialect":  "postgresql",
+    "entries":  [
+                    {
+                        "idx":  0,
+                        "version":  "7",
+                        "when":  1739990000000,
+                        "tag":  "0000_init",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  1,
+                        "version":  "7",
+                        "when":  1771759000000,
+                        "tag":  "0001_auth_usernames",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  2,
+                        "version":  "7",
+                        "when":  1771782000000,
+                        "tag":  "0002_post_tool_markdown",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  3,
+                        "version":  "7",
+                        "when":  1772102400000,
+                        "tag":  "0003_products_offers_merchants",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  4,
+                        "version":  "7",
+                        "when":  1772114204939,
+                        "tag":  "0004_categories_hierarchy",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  5,
+                        "version":  "7",
+                        "when":  1772126748347,
+                        "tag":  "0005_merchants_affiliate_identifier",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  6,
+                        "version":  "7",
+                        "when":  1772219477008,
+                        "tag":  "0006_remove_product_description",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  7,
+                        "version":  "7",
+                        "when":  1772220174253,
+                        "tag":  "0007_remove_product_legacy_fields",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  8,
+                        "version":  "7",
+                        "when":  1772221417334,
+                        "tag":  "0008_cooing_brother_voodoo",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  9,
+                        "version":  "7",
+                        "when":  1772280923212,
+                        "tag":  "0009_drop_comparisons",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  10,
+                        "version":  "7",
+                        "when":  1772280923212,
+                        "tag":  "0010_post_categories",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  11,
+                        "version":  "7",
+                        "when":  1772280923212,
+                        "tag":  "0011_merchant_clicks",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  12,
+                        "version":  "7",
+                        "when":  1772292000000,
+                        "tag":  "0012_awin_affiliate_programs",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  13,
+                        "version":  "7",
+                        "when":  1772310000000,
+                        "tag":  "0013_amazon_asins",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  14,
+                        "version":  "7",
+                        "when":  1772312400000,
+                        "tag":  "0014_product_offers_feed_category",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  15,
+                        "version":  "7",
+                        "when":  1772314200000,
+                        "tag":  "0015_job_runs",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  16,
+                        "version":  "7",
+                        "when":  1772317200000,
+                        "tag":  "0016_amazon_csv_import",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  17,
+                        "version":  "7",
+                        "when":  1772410000000,
+                        "tag":  "0017_ads_management",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  18,
+                        "version":  "7",
+                        "when":  1772566400000,
+                        "tag":  "0018_categories_homepage_placement",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  19,
+                        "version":  "7",
+                        "when":  1772569800000,
+                        "tag":  "0019_categories_homepage_placement_nullable",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  20,
+                        "version":  "7",
+                        "when":  1772621200000,
+                        "tag":  "0020_posts_featured",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  21,
+                        "version":  "7",
+                        "when":  1772702400000,
+                        "tag":  "0021_posts_single_deal",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  22,
+                        "version":  "7",
+                        "when":  1772709000000,
+                        "tag":  "0022_posts_cover_image_text",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  23,
+                        "version":  "7",
+                        "when":  1772736000000,
+                        "tag":  "0023_posts_latest_deals_sponsored",
+                        "breakpoints":  true
+                    },
+                    {
+                        "idx":  24,
+                        "version":  "7",
+                        "when":  1775520000000,
+                        "tag":  "0024_ads_format_catalog",
+                        "breakpoints":  true
+                    }
+                ]
 }
